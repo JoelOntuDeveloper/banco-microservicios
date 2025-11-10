@@ -1,30 +1,33 @@
 package banco.jontuna.ms_banco_cliente.event;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
 import lombok.Data;
 
 @Data
-public class ClienteCreadoEvent {
+public class ClienteCreadoEvent implements Serializable {
     private Long clienteId;
-    private String nombreCliente;
+    private String nombre;
     private String identificacion;
-    private String estado;
+    private LocalDateTime fechaCreacion;
 
     public ClienteCreadoEvent() {}
 
-    public ClienteCreadoEvent(Long clienteId, String nombreCliente, String identificacion, String estado) {
+    public ClienteCreadoEvent(Long clienteId, String nombre, String identificacion) {
         this.clienteId = clienteId;
-        this.nombreCliente = nombreCliente;
+        this.nombre = nombre;
         this.identificacion = identificacion;
-        this.estado = estado;
+        this.fechaCreacion = LocalDateTime.now();
     }
 
-    // Getters y Setters
-    public Long getClienteId() { return clienteId; }
-    public void setClienteId(Long clienteId) { this.clienteId = clienteId; }
-    public String getNombreCliente() { return nombreCliente; }
-    public void setNombreCliente(String nombreCliente) { this.nombreCliente = nombreCliente; }
-    public String getIdentificacion() { return identificacion; }
-    public void setIdentificacion(String identificacion) { this.identificacion = identificacion; }
-    public String getEstado() { return estado; }
-    public void setEstado(String estado) { this.estado = estado; }
+    @Override
+    public String toString() {
+        return "ClienteCreadoEvent{" +
+                "clienteId=" + clienteId +
+                ", nombre='" + nombre + '\'' +
+                ", identificacion='" + identificacion + '\'' +
+                ", fechaCreacion=" + fechaCreacion +
+                '}';
+    }
 }

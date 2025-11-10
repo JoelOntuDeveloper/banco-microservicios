@@ -8,6 +8,17 @@
             "mainClass": "banco.jontuna.ms_banco_cliente.MsBancoClienteApplication",
             "projectName": "ms-banco-cliente",
             "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=56477 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=ms-banco-cliente"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsBancoCuentaApplication<ms-banco-cuenta>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "banco.jontuna.ms_banco_cuenta.MsBancoCuentaApplication",
+            "projectName": "ms-banco-cuenta",
+            "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
     ]

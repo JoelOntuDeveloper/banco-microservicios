@@ -7,13 +7,11 @@ import java.util.stream.Collectors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import banco.jontuna.ms_banco_cliente.dto.ClienteRequestDTO;
 import banco.jontuna.ms_banco_cliente.dto.ClienteResponseDTO;
-// import banco.jontuna.ms_banco_cliente.event.ClienteCreadoEvent;
 import banco.jontuna.ms_banco_cliente.model.Cliente;
 import banco.jontuna.ms_banco_cliente.model.Persona;
 import banco.jontuna.ms_banco_cliente.repository.ClienteRepository;
@@ -35,11 +33,11 @@ public class ClienteService {
     @Autowired
     private PersonaRepository personaRepository;
 
-    // @Autowired
-    // private StreamBridge streamBridge;
-
     @Autowired
     private ClienteMapper clienteMapper;
+
+    @Autowired
+    private ClienteEventPublisher clienteEventPublisher; // Inyectamos el publisher
 
     public ClienteResponseDTO crearCliente(ClienteRequestDTO clienteRequest) {
         logger.info("Iniciando creación de cliente: {}", clienteRequest.getPersona().getNombre());
@@ -62,27 +60,13 @@ public class ClienteService {
             Cliente clienteGuardado = clienteRepository.save(cliente);
             logger.info("Cliente guardado con ID: {}", clienteGuardado.getClienteId());
 
-            // // Publicar evento asíncrono a RabbitMQ
-            // try {
-            //     ClienteCreadoEvent evento = new ClienteCreadoEvent(
-            //         clienteGuardado.getClienteId(),
-            //         clienteGuardado.getPersona().getNombre(),
-            //         clienteGuardado.getPersona().getIdentificacion(),
-            //         clienteGuardado.getEstado()
-            //     );
-                
-            //     boolean enviado = streamBridge.send("clienteCreado-out-0", evento);
-            //     if (enviado) {
-            //         logger.info("Evento ClienteCreado publicado exitosamente para cliente ID: {}", clienteGuardado.getClienteId());
-            //     } else {
-            //         logger.error("Error al publicar evento para cliente ID: {}", clienteGuardado.getClienteId());
-            //     }
-            // } catch (Exception e) {
-            //     logger.error("Error publicando evento para cliente ID: {}", clienteGuardado.getClienteId(), e);
-            //     // No re-lanzamos la excepción para no afectar la creación del cliente
-            // }
+            // Publicar evento asíncrono - Con manejo de excepciones integrado
+            clienteEventPublisher.publicarClienteCreado(
+                clienteGuardado.getClienteId(),
+                clienteGuardado.getPersona().getNombre(),
+                clienteGuardado.getPersona().getIdentificacion()
+            );
 
-            // Convertir Entity a Response DTO
             return clienteMapper.toResponseDTO(clienteGuardado);
 
         } catch (PersonaAlreadyExistsException | ValidationException e) {
@@ -142,7 +126,6 @@ public class ClienteService {
         try {
             return clienteRepository.findById(id)
                 .map(clienteExistente -> {
-                    // Validar contraseña si se está actualizando
                     if (clienteRequest.getContrasena() != null) {
                         if (clienteRequest.getContrasena().trim().isEmpty()) {
                             throw new ValidationException("La contraseña no puede estar vacía");
@@ -153,7 +136,6 @@ public class ClienteService {
                         clienteExistente.setContrasena(clienteRequest.getContrasena());
                     }
                     
-                    // Actualizar datos de la persona
                     Persona persona = clienteExistente.getPersona();
                     if (clienteRequest.getPersona().getNombre() != null) {
                         persona.setNombre(clienteRequest.getPersona().getNombre());
@@ -206,7 +188,6 @@ public class ClienteService {
         }
     }
 
-    // Método adicional para verificar existencia
     public boolean existeClientePorIdentificacion(String identificacion) {
         try {
             return clienteRepository.existsByPersonaIdentificacion(identificacion);

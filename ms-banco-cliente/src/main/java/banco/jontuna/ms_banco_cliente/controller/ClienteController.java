@@ -41,14 +41,14 @@ public class ClienteController {
     @GetMapping("/{id}")
     public ResponseEntity<ClienteResponseDTO> obtenerClientePorId(@PathVariable("id") Long id) {
         ClienteResponseDTO cliente = clienteService.obtenerClientePorId(id)
-                .orElseThrow(() -> new RuntimeException("Cliente no encontrado")); // Esto será manejado por el ExceptionHandler
+                .orElseThrow(() -> new RuntimeException("Cliente no encontrado")); 
         return ResponseEntity.ok(cliente);
     }
 
     @GetMapping("/identificacion/{identificacion}")
     public ResponseEntity<ClienteResponseDTO> obtenerClientePorIdentificacion(@PathVariable("identificacion") String identificacion) {
         ClienteResponseDTO cliente = clienteService.obtenerClientePorIdentificacion(identificacion)
-                .orElseThrow(() -> new RuntimeException("Cliente no encontrado")); // Esto será manejado por el ExceptionHandler
+                .orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
         return ResponseEntity.ok(cliente);
     }
 
