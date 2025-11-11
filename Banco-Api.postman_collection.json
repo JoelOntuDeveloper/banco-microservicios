@@ -1,0 +1,2842 @@
+{
+	"info": {
+		"_postman_id": "af133338-7c0a-4ab6-9b5e-cfce1a7d021a",
+		"name": "Banco Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23265366"
+	},
+	"item": [
+		{
+			"name": "ms-banco-cliente",
+			"item": [
+				{
+					"name": "Clientes",
+					"item": [
+						{
+							"name": "Todos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cliente}}/api/clientes",
+									"host": [
+										"{{api-cliente}}"
+									],
+									"path": [
+										"api",
+										"clientes"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:12:58 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"clienteId\": 1,\n        \"estado\": \"ACTIVO\",\n        \"persona\": {\n            \"personaId\": 1,\n            \"identificacion\": \"1234567890\",\n            \"nombre\": \"Juan Pérez\",\n            \"genero\": \"MASCULINO\",\n            \"edad\": 30,\n            \"direccion\": \"Calle Principal 123\",\n            \"telefono\": \"0987654321\"\n        }\n    },\n    {\n        \"clienteId\": 2,\n        \"estado\": \"ACTIVO\",\n        \"persona\": {\n            \"personaId\": 2,\n            \"identificacion\": \"0987654321\",\n            \"nombre\": \"María García\",\n            \"genero\": null,\n            \"edad\": null,\n            \"direccion\": null,\n            \"telefono\": null\n        }\n    },\n    {\n        \"clienteId\": 3,\n        \"estado\": \"ACTIVO\",\n        \"persona\": {\n            \"personaId\": 3,\n            \"identificacion\": \"1122334455\",\n            \"nombre\": \"Carlos López\",\n            \"genero\": \"MASCULINO\",\n            \"edad\": 45,\n            \"direccion\": \"Avenida Central 456, Quito\",\n            \"telefono\": \"0991234567\"\n        }\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Encontrar cliente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cliente}}/api/clientes/1",
+									"host": [
+										"{{api-cliente}}"
+									],
+									"path": [
+										"api",
+										"clientes",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes/1",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:13:23 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"clienteId\": 1,\n    \"estado\": \"ACTIVO\",\n    \"persona\": {\n        \"personaId\": 1,\n        \"identificacion\": \"1234567890\",\n        \"nombre\": \"Juan Pérez\",\n        \"genero\": \"MASCULINO\",\n        \"edad\": 30,\n        \"direccion\": \"Calle Principal 123\",\n        \"telefono\": \"0987654321\"\n    }\n}"
+								},
+								{
+									"name": "404",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes/12",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												"12"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:47:47 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-09 17:47:47\",\n    \"status\": 404,\n    \"error\": \"Cliente No Encontrado\",\n    \"message\": \"Cliente no encontrado con ID: 12\",\n    \"path\": \"/api/clientes/12\",\n    \"details\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Cliente por identificación",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{api-cliente}}/api/clientes/identificacion/1122334455",
+									"host": [
+										"{{api-cliente}}"
+									],
+									"path": [
+										"api",
+										"clientes",
+										"identificacion",
+										"1122334455"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8081/api/clientes/identificacion/1234567890",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8081",
+											"path": [
+												"api",
+												"clientes",
+												"identificacion",
+												"1234567890"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:14:15 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"clienteId\": 1,\n    \"estado\": \"ACTIVO\",\n    \"persona\": {\n        \"personaId\": 1,\n        \"identificacion\": \"1234567890\",\n        \"nombre\": \"Juan Pérez\",\n        \"genero\": \"MASCULINO\",\n        \"edad\": 30,\n        \"direccion\": \"Calle Principal 123\",\n        \"telefono\": \"0987654321\"\n    }\n}"
+								},
+								{
+									"name": "404",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes/identificacion/1234569890",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												"identificacion",
+												"1234569890"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:45:21 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-09 17:45:21\",\n    \"status\": 404,\n    \"error\": \"Cliente No Encontrado\",\n    \"message\": \"Cliente no encontrado con identificación: 1234569890\",\n    \"path\": \"/api/clientes/identificacion/1234569890\",\n    \"details\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Crear Cliente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"persona\": {\n      \"identificacion\": \"1724353639\",\n      \"nombre\": \"Maianela Montalvo\",\n      \"genero\": \"FEMENINO\",\n      \"edad\": 30,\n      \"direccion\": \"Amazonas y NNUU\",\n      \"telefono\": \"097548965\"\n    },\n    \"contrasena\": \"1234587\"\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-cliente}}/api/clientes",
+									"host": [
+										"{{api-cliente}}"
+									],
+									"path": [
+										"api",
+										"clientes"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"persona\": {\n      \"identificacion\": \"1234567890\",\n      \"nombre\": \"Juan Pérez\",\n      \"genero\": \"MASCULINO\",\n      \"edad\": 30,\n      \"direccion\": \"Calle Principal 123\",\n      \"telefono\": \"0987654321\"\n    },\n    \"contrasena\": \"password123\"\n }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:08:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date",
+											"domain": "",
+											"path": ""
+										}
+									],
+									"body": "{\n    \"clienteId\": 2,\n    \"estado\": \"ACTIVO\",\n    \"persona\": {\n        \"personaId\": 2,\n        \"identificacion\": \"0987654321\",\n        \"nombre\": \"María García\",\n        \"genero\": null,\n        \"edad\": null,\n        \"direccion\": null,\n        \"telefono\": null\n    }\n}"
+								},
+								{
+									"name": "409",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"persona\": {\n      \"identificacion\": \"1122334455\",\n      \"nombre\": \"Carlos López\",\n      \"genero\": \"MASCULINO\",\n      \"edad\": 45,\n      \"direccion\": \"Avenida Central 456, Quito\",\n      \"telefono\": \"0991234567\"\n    },\n    \"contrasena\": \"micontraseñaSegura123\"\n  }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes"
+											]
+										}
+									},
+									"status": "Conflict",
+									"code": 409,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:50:26 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-09 17:50:26\",\n    \"status\": 409,\n    \"error\": \"Persona Ya Existe\",\n    \"message\": \"Ya existe una persona con identificación: 1122334455\",\n    \"path\": \"/api/clientes\",\n    \"details\": null\n}"
+								},
+								{
+									"name": "200 Cliente 2",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"persona\": {\n      \"identificacion\": \"123456789\",\n      \"nombre\": \"José Lema\",\n      \"genero\": \"MASCULINO\",\n      \"edad\": 30,\n      \"direccion\": \"Otavalo sn y principal\",\n      \"telefono\": \"098254785\"\n    },\n    \"contrasena\": \"123456\"\n  }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Nov 2025 02:28:15 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"clienteId\": 3,\n    \"estado\": \"ACTIVO\",\n    \"persona\": {\n        \"personaId\": 3,\n        \"identificacion\": \"123456789\",\n        \"nombre\": \"José Lema\",\n        \"genero\": \"MASCULINO\",\n        \"edad\": 30,\n        \"direccion\": \"Otavalo sn y principal\",\n        \"telefono\": \"098254785\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Actualizar Cliente",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"persona\": {\n      \"identificacion\": \"1234567890\",\n      \"nombre\": \"Nuevo Actualizado\",\n      \"genero\": \"MASCULINO\",\n      \"edad\": 31,\n      \"direccion\": \"Calle Principal 123 - Actualizada\",\n      \"telefono\": \"0987654321\"\n    },\n    \"contrasena\": \"nuevaPassword123\"\n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-cliente}}/api/clientes/1",
+									"host": [
+										"{{api-cliente}}"
+									],
+									"path": [
+										"api",
+										"clientes",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"persona\": {\n      \"identificacion\": \"1234567890\",\n      \"nombre\": \"Juan Pérez Actualizado\",\n      \"genero\": \"MASCULINO\",\n      \"edad\": 31,\n      \"direccion\": \"Calle Principal 123 - Actualizada\",\n      \"telefono\": \"0987654321\"\n    },\n    \"contrasena\": \"nuevaPassword123\"\n  }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes/1",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:15:29 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"clienteId\": 1,\n    \"estado\": \"ACTIVO\",\n    \"persona\": {\n        \"personaId\": 1,\n        \"identificacion\": \"1234567890\",\n        \"nombre\": \"Juan Pérez Actualizado\",\n        \"genero\": \"MASCULINO\",\n        \"edad\": 31,\n        \"direccion\": \"Calle Principal 123 - Actualizada\",\n        \"telefono\": \"0987654321\"\n    }\n}"
+								},
+								{
+									"name": "404",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"persona\": {\n      \"identificacion\": \"1234567890\",\n      \"nombre\": \"Juan Pérez Actualizado\",\n      \"genero\": \"MASCULINO\",\n      \"edad\": 31,\n      \"direccion\": \"Calle Principal 123 - Actualizada\",\n      \"telefono\": \"0987654321\"\n    },\n    \"contrasena\": \"nuevaPassword123\"\n  }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes/26",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												"26"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:48:50 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-09 17:48:50\",\n    \"status\": 404,\n    \"error\": \"Cliente No Encontrado\",\n    \"message\": \"Cliente no encontrado con ID: 26\",\n    \"path\": \"/api/clientes/26\",\n    \"details\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Eliminar cliente",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{api-cliente}}/api/clientes/1",
+									"host": [
+										"{{api-cliente}}"
+									],
+									"path": [
+										"api",
+										"clientes",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes/1",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:16:38 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "404",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes/12",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												"12"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 22:44:25 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-09 17:44:25\",\n    \"status\": 404,\n    \"error\": \"Cliente No Encontrado\",\n    \"message\": \"Cliente no encontrado con ID: 12\",\n    \"path\": \"/api/clientes/12\",\n    \"details\": null\n}"
+								},
+								{
+									"name": "400 Cliente inactivo",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{api-cliente}}/api/clientes/1",
+											"host": [
+												"{{api-cliente}}"
+											],
+											"path": [
+												"api",
+												"clientes",
+												"1"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Nov 2025 16:45:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-11 11:45:35\",\n    \"status\": 400,\n    \"error\": \"Error de Validación\",\n    \"message\": \"El cliente ya se encuentra INACTIVO\",\n    \"path\": \"/api/clientes/1\",\n    \"details\": null\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ms-banco-cuenta",
+			"item": [
+				{
+					"name": "Cuentas",
+					"item": [
+						{
+							"name": "Cuentas por cliente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/cuentas/cliente/4",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"cuentas",
+										"cliente",
+										"4"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas/cliente/1",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas",
+												"cliente",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:38:31 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\",\n        \"tipoCuenta\": \"AHORROS\",\n        \"saldoInicial\": 1000,\n        \"estado\": \"ACTIVA\",\n        \"clienteId\": 1\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Cuenta por id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/cuentas/1",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"cuentas",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas/1",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:41:30 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"cuentaId\": 1,\n    \"numeroCuenta\": \"0345446858\",\n    \"tipoCuenta\": \"AHORROS\",\n    \"saldoInicial\": 1000,\n    \"estado\": \"ACTIVA\",\n    \"clienteId\": 1\n}"
+								},
+								{
+									"name": "404",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas/23",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas",
+												"23"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:41:46 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-09 19:41:46\",\n    \"status\": 404,\n    \"error\": \"Cuenta No Encontrada\",\n    \"message\": \"Cuenta no encontrada con ID: 23\",\n    \"path\": \"/api/cuentas/23\",\n    \"details\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Cuenta por número",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/cuentas/numero/0345446858",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"cuentas",
+										"numero",
+										"0345446858"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas/numero/0345446858",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas",
+												"numero",
+												"0345446858"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:42:58 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"cuentaId\": 1,\n    \"numeroCuenta\": \"0345446858\",\n    \"tipoCuenta\": \"AHORROS\",\n    \"saldoInicial\": 1000,\n    \"estado\": \"ACTIVA\",\n    \"clienteId\": 1\n}"
+								}
+							]
+						},
+						{
+							"name": "Todas las cuentas",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/cuentas",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"cuentas"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:43:50 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\",\n        \"tipoCuenta\": \"AHORROS\",\n        \"saldoInicial\": 1000,\n        \"estado\": \"ACTIVA\",\n        \"clienteId\": 1\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Consultar Saldo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/cuentas/1/saldo",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"cuentas",
+										"1",
+										"saldo"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas/1/saldo",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas",
+												"1",
+												"saldo"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:44:29 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "1000"
+								},
+								{
+									"name": "404 Cuenta no encontrada",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas/13/saldo",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas",
+												"13",
+												"saldo"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Nov 2025 15:36:39 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-11 10:36:39\",\n    \"status\": 404,\n    \"error\": \"Cuenta No Encontrada\",\n    \"message\": \"Cuenta no encontrada con ID: 13\",\n    \"path\": \"/api/cuentas/13/saldo\",\n    \"details\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Crear cuenta",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tipoCuenta\": \"AHORROS\",\n    \"saldoInicial\": 1000.00,\n    \"clienteId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/cuentas",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"cuentas"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"tipoCuenta\": \"AHORROS\",\n    \"saldoInicial\": 1000.00,\n    \"clienteId\": 1\n  }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:38:00 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"cuentaId\": 1,\n    \"numeroCuenta\": \"0345446858\",\n    \"tipoCuenta\": \"AHORROS\",\n    \"saldoInicial\": 1000,\n    \"estado\": \"ACTIVA\",\n    \"clienteId\": 1\n}"
+								}
+							]
+						},
+						{
+							"name": "Actualizar estado de cuenta",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/cuentas/3/estado?estado=BLOQUEADA",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"cuentas",
+										"3",
+										"estado"
+									],
+									"query": [
+										{
+											"key": "estado",
+											"value": "BLOQUEADA"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 cuenta actualizada",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas/3/estado?estado=BLOQUEADA",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas",
+												"3",
+												"estado"
+											],
+											"query": [
+												{
+													"key": "estado",
+													"value": "BLOQUEADA"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Nov 2025 15:34:46 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date",
+											"domain": "",
+											"path": ""
+										}
+									],
+									"body": "{\n    \"cuentaId\": 3,\n    \"numeroCuenta\": \"0046165912\",\n    \"tipoCuenta\": \"AHORROS\",\n    \"saldoInicial\": 1000,\n    \"estado\": \"BLOQUEADA\",\n    \"clienteId\": 1\n}"
+								},
+								{
+									"name": "404 Cuenta no encontrada",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas/35/estado?estado=BLOQUEADA",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas",
+												"35",
+												"estado"
+											],
+											"query": [
+												{
+													"key": "estado",
+													"value": "BLOQUEADA"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Nov 2025 15:35:51 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-11 10:35:51\",\n    \"status\": 404,\n    \"error\": \"Cuenta No Encontrada\",\n    \"message\": \"Cuenta no encontrada con ID: 35\",\n    \"path\": \"/api/cuentas/35/estado\",\n    \"details\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "Actualizar estado de cuenta Copy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/cuentas/1",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"cuentas",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "500",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas/1",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas",
+												"1"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 04:09:31 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-09 23:09:31\",\n    \"status\": 500,\n    \"error\": \"Error en la Aplicación\",\n    \"message\": \"No se puede eliminar la cuenta 0345446858 porque tiene saldo pendiente: 1300,00\",\n    \"path\": \"/api/cuentas/1\",\n    \"details\": null\n}"
+								},
+								{
+									"name": "404",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/cuentas/12",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"cuentas",
+												"12"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 04:36:26 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-09 23:36:26\",\n    \"status\": 404,\n    \"error\": \"Cuenta No Encontrada\",\n    \"message\": \"Cuenta no encontrada con ID: 12\",\n    \"path\": \"/api/cuentas/12\",\n    \"details\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Movimientos",
+					"item": [
+						{
+							"name": "Movimientos por cuenta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/movimientos/cuenta/1",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"movimientos",
+										"cuenta",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8082/api/movimientos/cuenta/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8082",
+											"path": [
+												"api",
+												"movimientos",
+												"cuenta",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:50:20 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"movimientoId\": 3,\n        \"fecha\": \"2025-11-09T19:49:25\",\n        \"tipoMovimiento\": \"RETIRO\",\n        \"valor\": 200,\n        \"saldo\": 1300,\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\"\n    },\n    {\n        \"movimientoId\": 2,\n        \"fecha\": \"2025-11-09T19:46:53\",\n        \"tipoMovimiento\": \"DEPOSITO\",\n        \"valor\": 500,\n        \"saldo\": 1500,\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\"\n    },\n    {\n        \"movimientoId\": 1,\n        \"fecha\": \"2025-11-09T19:38:01\",\n        \"tipoMovimiento\": \"DEPOSITO\",\n        \"valor\": 1000,\n        \"saldo\": 1000,\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Movimientos por cliente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/movimientos/cliente/1",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"movimientos",
+										"cliente",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8082/api/movimientos/cliente/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8082",
+											"path": [
+												"api",
+												"movimientos",
+												"cliente",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:51:17 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"movimientoId\": 1,\n        \"fecha\": \"2025-11-09T19:38:01\",\n        \"tipoMovimiento\": \"DEPOSITO\",\n        \"valor\": 1000,\n        \"saldo\": 1000,\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\"\n    },\n    {\n        \"movimientoId\": 2,\n        \"fecha\": \"2025-11-09T19:46:53\",\n        \"tipoMovimiento\": \"DEPOSITO\",\n        \"valor\": 500,\n        \"saldo\": 1500,\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\"\n    },\n    {\n        \"movimientoId\": 3,\n        \"fecha\": \"2025-11-09T19:49:25\",\n        \"tipoMovimiento\": \"RETIRO\",\n        \"valor\": 200,\n        \"saldo\": 1300,\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Movimientos por Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/movimientos/1",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"movimientos",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8082/api/movimientos/1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8082",
+											"path": [
+												"api",
+												"movimientos",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:52:14 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"movimientoId\": 1,\n    \"fecha\": \"2025-11-09T19:38:01\",\n    \"tipoMovimiento\": \"DEPOSITO\",\n    \"valor\": 1000,\n    \"saldo\": 1000,\n    \"cuentaId\": 1,\n    \"numeroCuenta\": \"0345446858\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Todos los movimientos",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/movimientos",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"movimientos"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8082/api/movimientos",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8082",
+											"path": [
+												"api",
+												"movimientos"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 00:52:42 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"movimientoId\": 1,\n        \"fecha\": \"2025-11-09T19:38:01\",\n        \"tipoMovimiento\": \"DEPOSITO\",\n        \"valor\": 1000,\n        \"saldo\": 1000,\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\"\n    },\n    {\n        \"movimientoId\": 2,\n        \"fecha\": \"2025-11-09T19:46:53\",\n        \"tipoMovimiento\": \"DEPOSITO\",\n        \"valor\": 500,\n        \"saldo\": 1500,\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\"\n    },\n    {\n        \"movimientoId\": 3,\n        \"fecha\": \"2025-11-09T19:49:25\",\n        \"tipoMovimiento\": \"RETIRO\",\n        \"valor\": 200,\n        \"saldo\": 1300,\n        \"cuentaId\": 1,\n        \"numeroCuenta\": \"0345446858\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Registrar depósito o retiro",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"valor\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/movimientos/cuenta/1",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"movimientos",
+										"cuenta",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200 depósito",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"valor\": 500.00\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/movimientos/cuenta/1",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"movimientos",
+												"cuenta",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 14:48:22 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"movimientoId\": 4,\n    \"fecha\": \"2025-11-10T09:48:21.8629659\",\n    \"tipoMovimiento\": \"DEPOSITO\",\n    \"valor\": 500,\n    \"saldo\": 1800,\n    \"cuentaId\": 1,\n    \"numeroCuenta\": \"0345446858\"\n}"
+								},
+								{
+									"name": "200 Retiro",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"valor\": -200.00\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/movimientos/cuenta/1",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"movimientos",
+												"cuenta",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 14:50:38 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"movimientoId\": 5,\n    \"fecha\": \"2025-11-10T09:50:38.9173627\",\n    \"tipoMovimiento\": \"RETIRO\",\n    \"valor\": -200,\n    \"saldo\": 1600,\n    \"cuentaId\": 1,\n    \"numeroCuenta\": \"0345446858\"\n}"
+								},
+								{
+									"name": "400 Saldo no disponible",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"valor\": -200.00\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/movimientos/cuenta/1",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"movimientos",
+												"cuenta",
+												"1"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 14:51:26 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-10 09:51:26\",\n    \"status\": 400,\n    \"error\": \"Saldo no disponible\",\n    \"message\": \"Saldo no disponible. Saldo actual: 0,00, Valor a retirar: 200,00\",\n    \"path\": \"/api/movimientos/cuenta/1\",\n    \"details\": null\n}"
+								},
+								{
+									"name": "400 Movimiento Inválido",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"valor\": 0\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/movimientos/cuenta/1",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"movimientos",
+												"cuenta",
+												"1"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Vary",
+											"value": "Origin"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Method"
+										},
+										{
+											"key": "Vary",
+											"value": "Access-Control-Request-Headers"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 10 Nov 2025 14:55:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-10 09:55:18\",\n    \"status\": 400,\n    \"error\": \"Movimiento Inválido\",\n    \"message\": \"El valor del movimiento no puede ser cero\",\n    \"path\": \"/api/movimientos/cuenta/1\",\n    \"details\": null\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Reportes",
+					"item": [
+						{
+							"name": "Reporte Estado de cuenta",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-cuenta-movimiento}}/api/reportes/:clienteId?fechaInicio=2025-01-01&fechaFin=2025-11-10",
+									"host": [
+										"{{api-cuenta-movimiento}}"
+									],
+									"path": [
+										"api",
+										"reportes",
+										":clienteId"
+									],
+									"query": [
+										{
+											"key": "fechaInicio",
+											"value": "2025-01-01"
+										},
+										{
+											"key": "fechaFin",
+											"value": "2025-11-10"
+										}
+									],
+									"variable": [
+										{
+											"key": "clienteId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "404 Sin movimientos",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/reportes/:clienteId?fechaInicio=2025-01-01&fechaFin=2025-11-10",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"reportes",
+												":clienteId"
+											],
+											"query": [
+												{
+													"key": "fechaInicio",
+													"value": "2025-01-01"
+												},
+												{
+													"key": "fechaFin",
+													"value": "2025-11-10"
+												}
+											],
+											"variable": [
+												{
+													"key": "clienteId",
+													"value": "4"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Nov 2025 15:29:09 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"timestamp\": \"2025-11-11 10:29:09\",\n    \"status\": 404,\n    \"error\": \"Cuentas No Encontradas\",\n    \"message\": \"No se encontraron cuentas con movimientos para el cliente ID: 4 en el rango 2025-01-01 a 2025-11-10\",\n    \"path\": \"/api/reportes/4\",\n    \"details\": null\n}"
+								},
+								{
+									"name": "200 con movimientos",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{api-cuenta-movimiento}}/api/reportes/:clienteId?fechaInicio=2025-01-01&fechaFin=2025-11-10",
+											"host": [
+												"{{api-cuenta-movimiento}}"
+											],
+											"path": [
+												"api",
+												"reportes",
+												":clienteId"
+											],
+											"query": [
+												{
+													"key": "fechaInicio",
+													"value": "2025-01-01"
+												},
+												{
+													"key": "fechaFin",
+													"value": "2025-11-10"
+												}
+											],
+											"variable": [
+												{
+													"key": "clienteId",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 11 Nov 2025 15:30:39 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"clienteId\": 1,\n    \"fechaInicio\": \"2025-01-01\",\n    \"fechaFin\": \"2025-11-10\",\n    \"cuentas\": [\n        {\n            \"cuentaId\": 1,\n            \"numeroCuenta\": \"0345446858\",\n            \"tipoCuenta\": \"AHORROS\",\n            \"estado\": \"ACTIVA\",\n            \"saldoActual\": 500,\n            \"movimientos\": [\n                {\n                    \"movimientoId\": 14,\n                    \"fecha\": \"2025-11-10T09:56:51\",\n                    \"tipoMovimiento\": \"DEPOSITO\",\n                    \"valor\": 500,\n                    \"descripcion\": \"Crédito de $500.00\",\n                    \"saldoDespues\": 500\n                },\n                {\n                    \"movimientoId\": 13,\n                    \"fecha\": \"2025-11-10T09:51:26\",\n                    \"tipoMovimiento\": \"RETIRO\",\n                    \"valor\": 200,\n                    \"descripcion\": \"Crédito de $200.00\",\n                    \"saldoDespues\": 0\n                },\n                {\n                    \"movimientoId\": 12,\n                    \"fecha\": \"2025-11-10T09:51:24\",\n                    \"tipoMovimiento\": \"RETIRO\",\n                    \"valor\": 200,\n                    \"descripcion\": \"Crédito de $200.00\",\n                    \"saldoDespues\": 200\n                },\n                {\n                    \"movimientoId\": 11,\n                    \"fecha\": \"2025-11-10T09:51:23\",\n                    \"tipoMovimiento\": \"RETIRO\",\n                    \"valor\": 200,\n                    \"descripcion\": \"Crédito de $200.00\",\n                    \"saldoDespues\": 400\n                },\n                {\n                    \"movimientoId\": 10,\n                    \"fecha\": \"2025-11-10T09:51:22\",\n                    \"tipoMovimiento\": \"RETIRO\",\n                    \"valor\": 200,\n                    \"descripcion\": \"Crédito de $200.00\",\n                    \"saldoDespues\": 600\n                },\n                {\n                    \"movimientoId\": 9,\n                    \"fecha\": \"2025-11-10T09:51:21\",\n                    \"tipoMovimiento\": \"RETIRO\",\n                    \"valor\": 200,\n                    \"descripcion\": \"Crédito de $200.00\",\n                    \"saldoDespues\": 800\n                },\n                {\n                    \"movimientoId\": 8,\n                    \"fecha\": \"2025-11-10T09:51:20\",\n                    \"tipoMovimiento\": \"RETIRO\",\n                    \"valor\": 200,\n                    \"descripcion\": \"Crédito de $200.00\",\n                    \"saldoDespues\": 1000\n                },\n                {\n                    \"movimientoId\": 7,\n                    \"fecha\": \"2025-11-10T09:51:19\",\n                    \"tipoMovimiento\": \"RETIRO\",\n                    \"valor\": 200,\n                    \"descripcion\": \"Crédito de $200.00\",\n                    \"saldoDespues\": 1200\n                },\n                {\n                    \"movimientoId\": 6,\n                    \"fecha\": \"2025-11-10T09:51:18\",\n                    \"tipoMovimiento\": \"RETIRO\",\n                    \"valor\": 200,\n                    \"descripcion\": \"Crédito de $200.00\",\n                    \"saldoDespues\": 1400\n                },\n                {\n                    \"movimientoId\": 5,\n                    \"fecha\": \"2025-11-10T09:50:39\",\n                    \"tipoMovimiento\": \"RETIRO\",\n                    \"valor\": 200,\n                    \"descripcion\": \"Crédito de $200.00\",\n                    \"saldoDespues\": 1600\n                },\n                {\n                    \"movimientoId\": 4,\n                    \"fecha\": \"2025-11-10T09:48:22\",\n                    \"tipoMovimiento\": \"DEPOSITO\",\n                    \"valor\": 500,\n                    \"descripcion\": \"Crédito de $500.00\",\n                    \"saldoDespues\": 1800\n                },\n                {\n                    \"movimientoId\": 3,\n                    \"fecha\": \"2025-11-09T19:49:25\",\n                    \"tipoMovimiento\": \"RETIRO\",\n                    \"valor\": 200,\n                    \"descripcion\": \"Crédito de $200.00\",\n                    \"saldoDespues\": 1300\n                },\n                {\n                    \"movimientoId\": 2,\n                    \"fecha\": \"2025-11-09T19:46:53\",\n                    \"tipoMovimiento\": \"DEPOSITO\",\n                    \"valor\": 500,\n                    \"descripcion\": \"Crédito de $500.00\",\n                    \"saldoDespues\": 1500\n                },\n                {\n                    \"movimientoId\": 1,\n                    \"fecha\": \"2025-11-09T19:38:01\",\n                    \"tipoMovimiento\": \"DEPOSITO\",\n                    \"valor\": 1000,\n                    \"descripcion\": \"Crédito de $1000.00\",\n                    \"saldoDespues\": 1000\n                }\n            ]\n        },\n        {\n            \"cuentaId\": 3,\n            \"numeroCuenta\": \"0046165912\",\n            \"tipoCuenta\": \"AHORROS\",\n            \"estado\": \"ACTIVA\",\n            \"saldoActual\": 1000,\n            \"movimientos\": [\n                {\n                    \"movimientoId\": 15,\n                    \"fecha\": \"2025-11-10T21:31:05\",\n                    \"tipoMovimiento\": \"DEPOSITO\",\n                    \"valor\": 1000,\n                    \"descripcion\": \"Crédito de $1000.00\",\n                    \"saldoDespues\": 1000\n                }\n            ]\n        }\n    ],\n    \"saldoTotal\": 1500\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api-cliente",
+			"value": ""
+		},
+		{
+			"key": "api-cuenta-movimiento",
+			"value": ""
+		}
+	]
+}
